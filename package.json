@@ -1,6 +1,6 @@
 {
   "name": "number-counter-animation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "一个轻量级的数字滚动动画插件，当页面滚动到元素位置时，数字从0平滑滚动到目标值",
   "main": "dist/number-counter.min.js",
   "module": "src/number-counter.js",

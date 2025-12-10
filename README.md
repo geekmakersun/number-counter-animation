@@ -33,7 +33,26 @@ yarn add number-counter-animation
 
 ## 使用方法
 
-### 1. HTML 结构
+### 快速开始
+
+```html
+<!-- 1. 添加 HTML 元素 -->
+<span class="counter" data-counter data-target="100">0</span>
+
+<!-- 2. 引入插件 -->
+<script src="path/to/number-counter.min.js"></script>
+
+<!-- 3. 初始化插件 -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    NumberCounter.init();
+  });
+</script>
+```
+
+### 详细用法
+
+#### 1. HTML 结构
 
 ```html
 <!-- 基础用法 -->
@@ -57,15 +76,18 @@ yarn add number-counter-animation
 ```javascript
 import NumberCounter from 'number-counter-animation';
 
-// 初始化所有带有 data-counter 属性的元素
-NumberCounter.init();
-
-// 或者使用自定义选项初始化
-NumberCounter.init({
-  selector: '.my-counter',
-  duration: 2000,
-  delay: 0,
-  separator: ','
+// 确保DOM完全加载后再初始化
+document.addEventListener('DOMContentLoaded', () => {
+  // 初始化所有带有 data-counter 属性的元素
+  NumberCounter.init();
+  
+  // 或者使用自定义选项初始化
+  NumberCounter.init({
+    selector: '.my-counter',
+    duration: 2000,
+    delay: 0,
+    separator: ','
+  });
 });
 ```
 
@@ -74,14 +96,20 @@ NumberCounter.init({
 ```javascript
 const NumberCounter = require('number-counter-animation');
 
-NumberCounter.init();
+// 确保DOM完全加载后再初始化
+document.addEventListener('DOMContentLoaded', () => {
+  NumberCounter.init();
+});
 ```
 
 #### 浏览器全局变量
 
 ```javascript
 // 在引入 CDN 脚本后
-NumberCounter.init();
+// 确保DOM完全加载后再初始化
+document.addEventListener('DOMContentLoaded', () => {
+  NumberCounter.init();
+});
 ```
 
 ### 3. 单独初始化元素
