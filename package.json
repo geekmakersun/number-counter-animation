@@ -1,0 +1,66 @@
+{
+  "name": "number-counter-animation",
+  "version": "1.0.0",
+  "description": "一个轻量级的数字滚动动画插件，当页面滚动到元素位置时，数字从0平滑滚动到目标值",
+  "main": "dist/number-counter.min.js",
+  "module": "src/number-counter.js",
+  "browser": "dist/number-counter.min.js",
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode=development --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "number",
+    "counter",
+    "animation",
+    "scroll",
+    "javascript",
+    "es6",
+    "intersection-observer",
+    "count-up",
+    "digit-animation",
+    "ui",
+    "effects"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://yourwebsite.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/number-counter-animation.git"
+  },
+  "homepage": "https://github.com/yourusername/number-counter-animation#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/number-counter-animation/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.19.0",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

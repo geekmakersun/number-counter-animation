@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Counter Animation - 示例</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 60px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+    
+    .demo-section {
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .counter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    
+    .counter-box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      min-width: 200px;
+    }
+    
+    .counter-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+    
+    .counter-label {
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    .code-block {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    
+    pre {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+    }
+    
+    .installation-steps {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    
+    .step {
+      margin-bottom: 15px;
+    }
+    
+    .step-number {
+      background: #667eea;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-size: 0.8rem;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Number Counter Animation</h1>
+    <p>一个轻量级的数字滚动动画插件</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>基本示例</h2>
+      <p>滚动到下方查看数字滚动动画效果：</p>
+      
+      <div class="demo-section">
+        <div class="counter-container">
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="100">0</div>
+            <div class="counter-label">基本计数</div>
+          </div>
+          
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="1234" data-duration="2000">0</div>
+            <div class="counter-label">较长数字 (2秒)</div>
+          </div>
+          
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="99" data-duration="3000">0</div>
+            <div class="counter-label">较慢计数 (3秒)</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="code-block">
+        <pre><code>&lt;div class="counter-value" data-counter data-target="100"&gt;0&lt;/div&gt;
+
+&lt;div class="counter-value" data-counter data-target="1234" data-duration="2000"&gt;0&lt;/div&gt;
+
+&lt;div class="counter-value" data-counter data-target="99" data-duration="3000"&gt;0&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>高级示例</h2>
+      <p>带有前缀、后缀、千位分隔符和小数位数的示例：</p>
+      
+      <div class="demo-section">
+        <div class="counter-container">
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="1000" data-prefix="$">0</div>
+            <div class="counter-label">带美元前缀</div>
+          </div>
+          
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="99.99" data-decimals="2" data-suffix="%">0</div>
+            <div class="counter-label">带百分比后缀和2位小数</div>
+          </div>
+          
+          <div class="counter-box">
+            <div class="counter-value" data-counter data-target="1234567" data-separator=",">0</div>
+            <div class="counter-label">带千位分隔符</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="code-block">
+        <pre><code>&lt;div class="counter-value" data-counter data-target="1000" data-prefix="$"&gt;0&lt;/div&gt;
+
+&lt;div class="counter-value" data-counter data-target="99.99" data-decimals="2" data-suffix="%"&gt;0&lt;/div&gt;
+
+&lt;div class="counter-value" data-counter data-target="1234567" data-separator=","&gt;0&lt;/div&gt;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>安装和使用</h2>
+      
+      <div class="installation-steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <strong>通过 NPM 安装：</strong>
+          <div class="code-block">
+            <pre><code>npm install number-counter-animation --save</code></pre>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">2</span>
+          <strong>在 HTML 中添加元素：</strong>
+          <div class="code-block">
+            <pre><code>&lt;div class="counter" data-counter data-target="100"&gt;0&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">3</span>
+          <strong>在 JavaScript 中初始化：</strong>
+          <div class="code-block">
+            <pre><code>// ES6 模块导入
+import NumberCounter from 'number-counter-animation';
+
+// 初始化所有带有 data-counter 属性的元素
+NumberCounter.init();
+
+// 或者使用自定义选项初始化
+NumberCounter.init({
+  selector: '.my-counter',
+  duration: 2000,
+  delay: 0,
+  separator: ','
+});</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Number Counter Animation. 保留所有权利。</p>
+  </footer>
+
+  <!-- 引入插件 -->
+  <script src="../dist/number-counter.min.js"></script>
+  
+  <script>
+    // 初始化插件
+    document.addEventListener('DOMContentLoaded', () => {
+      NumberCounter.init();
+    });
+  </script>
+</body>
+</html>
